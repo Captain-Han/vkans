@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang=zh ng-app=apps>
+<head>
+    <meta charset=utf-8>
+    <meta name=keywords content="锤子, 锤子科技官网, 锤子手机官网, 锤子科技, Smartisan, SmartisanOS, SmartisanROM, 锤子ROM">
+    <meta content=锤子科技是一家制造移动互联网终端设备的公司，公司的使命是用完美主义的工匠精神，打造用户体验一流的数码消费类产品（智能手机为主），改善人们的生活质量。 name=description>
+    <meta http-equiv=X-UA-Compatible content="IE=Edge">
+    <meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>锤子科技官网</title>
+    <link href=http://static.smartisanos.cn/common/img/favicon.ico rel="shortcut icon">
+    <link href=http://static.smartisanos.cn/common/img/favicon_114.png rel=apple-touch-icon>
+    <link href=http://static.smartisanos.cn/common/img/favicon_76.png sizes=76x76 rel=apple-touch-icon>
+    <link href=http://static.smartisanos.cn/common/img/favicon_120.png sizes=120x120 rel=apple-touch-icon>
+    <link href=http://static.smartisanos.cn/common/img/favicon_152.png sizes=152x152 rel=apple-touch-icon>
+    <link rel=stylesheet href=http://static.smartisanos.cn/index/asset1429099131842/css/main.css>
+</head>
+<body class="{{ pageClass }}">
+<div class=wrapper ng-controller=MainCtrl>
+    <div class=layout-header>
+        <div class=header-top-wrapper>
+            <div class=header-wrapper>
+                <div class="header-container fn-clear"><a href=http://www.smartisan.com/#/home class=logo><img
+                        src=http://static.smartisanos.cn/index/asset1429099131842/img/logo.png width=161 height=38
+                        data-at2x alt=smartisan></a>
+
+                    <div class="nav-list js-nav-list">
+                        <ul>
+                            <li><a href=http://www.smartisan.com/#/home><span>首页</span></a></li>
+                            <li><a href=http://www.smartisan.com/t1/#/overview><span>Smartisan T1</span></a></li>
+                            <li><a href="http://store.smartisan.com/" target=_blank><span>在线商城</span></a></li>
+                            <li><a href="http://www.smartisan.com/apps/"><span>应用下载</span></a></li>
+                        </ul>
+                        <div class=buy-col>
+                            <a href=http://preorder.smartisan.com/#/warranty/agreement target=_blank>
+                                <span>补购保修服务</span></a> <a data-log=purchase|buy|nav class=buy-button
+                                                           href=http://preorder.smartisan.com/#/phone><span>立即购买 T1</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=header-menu-wrapper>
+            <div class=header-wrapper>
+                <div class="header-container fn-clear">
+                    <div class=header-crumbs></div>
+                    <div class=header-language-switch>
+                        <h3>
+                            <a ng-click=headerChangeLan()>中文<span class=icon></span></a>
+                        </h3>
+                        <ul>
+                            <li><a href="http://www.smartisan.com/en/" ng-click=changeLangCookies($event)>English</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class=header-account-wrapper>
+                        <div class=fn-hide ng-class="{'fn-show': isLoggedIn === false}"><a ng-click=login()
+                                                                                           class=normal-link>登录</a> <a
+                                ng-click=register() class="normal-link line-link">注册</a></div>
+                        <div class="header-account-panel fn-hide" ng-class="{'fn-show': isLoggedIn === true}"><span
+                                class=account-label><a href=http://store.smartisan.com/#/account/order
+                                                       class=account-link>账户中心</a> <span class=icon-arrow></span><div
+                                class=account-con>
+                            <ul>
+                                <li><a href=http://store.smartisan.com/#/account/preorder><span>手机订单</span></a></li>
+                                <li><a href=http://store.smartisan.com/#/account/order><span>商城订单</span></a></li>
+                                <li><a href=http://store.smartisan.com/#/account/support><span>售后服务</span></a></li>
+                                <li><a href=http://store.smartisan.com/#/account/address><span>收货地址</span></a></li>
+                                <li ng-click=logout() class=js-logout><a><span>退出</span></a></li>
+                            </ul>
+                        </div></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class=header-shadow></div>
+        </div>
+    </div>
+    <div class=page-loading ng-show=loading>
+        <div class=loading-bar><img src=http://static.smartisanos.cn/index/asset1429099131842/img/i.gif
+                                    class=loading-icon> 页面加载中
+        </div>
+    </div>
+    <div class="main main-index fn-clear" ng-view="" autoscroll=true></div>
+    <div class=footer>
+        <div class=service>
+            <div class=inner>
+                <div class=info>
+                    <ul>
+                        <li><h3>订单服务</h3></li>
+                        <li><a href=http://www.smartisan.com/#/instruction>购买指南</a></li>
+                        <li><a href=http://www.smartisan.com/#/payment>支付方式</a></li>
+                        <li><a href=http://www.smartisan.com/#/delivery>送货政策</a></li>
+                    </ul>
+                    <ul>
+                        <li><h3>服务与支持</h3></li>
+                        <li><a href=http://www.smartisan.com/#/service>售后服务</a></li>
+                        <li><a href=http://www.smartisan.com/#/storelist>线下门店</a></li>
+                        <li><a href=http://preorder.smartisan.com/#/mobile/code target=_blank>优先购买通道</a></li>
+                    </ul>
+                    <ul>
+                        <li><h3>关于公司</h3></li>
+                        <li><a href=http://www.smartisan.com/#/about>公司简介</a></li>
+                        <li><a href=http://www.smartisan.com/#/join>加入我们</a></li>
+                        <li><a href=http://www.smartisan.com/#/contact>联系我们</a></li>
+                    </ul>
+                    <ul>
+                        <li><h3>媒体中心</h3></li>
+                        <li><a href=http://www.smartisan.com/pr/#/news-center>新闻动态</a></li>
+                        <li><a href=http://www.smartisan.com/pr/#/videos>官方视频</a></li>
+                        <li><a href=http://bbs.smartisan.cn/forum.php target=_blank>官方论坛</a></li>
+                    </ul>
+                </div>
+                <div class=online><p class=fn-clear data-service-dom=live800 data-label=在线咨询
+                                     add-custom-service-module=""><a data-log=purchase|consult class=online-services>在线咨询</a>
+                </p>
+
+                    <p class=tel><a href=tel:4006190909>400-619-0909</a></p>
+
+                    <p>周一至周日 9:00-18:00（仅收市话费）</p></div>
+            </div>
+        </div>
+        <div class=copyright>
+            <div class="inner fn-clear">
+                <div class=copy-label>
+                    <div class=copy-text>Copyright © 2015, Smartisan Digital Co., Ltd. All Rights Reserved.
+                        北京锤子数码科技有限公司
+                    </div>
+                    <a class=icp-text href="http://www.miibeian.gov.cn/" target=_blank>京ICP备14041720号-1 京ICP证140622号
+                        京公网安备11010502025474</a></div>
+                <ul class=privacy>
+                    <li><a href=http://www.smartisan.com/#/agreement>法律声明</a></li>
+                    <li><a href=http://www.smartisan.com/#/privacy>隐私条款</a></li>
+                </ul>
+                <ul class=sns>
+                    <li><a href=http://weibo.com/smartisan target=_blank class=weibo>新浪微博</a></li>
+                    <li class=weixin show-weixin-code=""><a class=weixin>微信</a>
+
+                        <div class=dimensional-code><img
+                                src=http://static.smartisanos.cn/index/asset1429099131842/img/dimensional-code.png>
+                        </div>
+                    </li>
+                </ul>
+                <div class=language-switch>
+                    <ul>
+                        <li><a href="http://www.smartisan.com/en/" ng-click=changeLangCookies($event)>English</a></li>
+                    </ul>
+                    <h3><a ng-click=changeLan()>中文<span class=icon></span></a></h3></div>
+            </div>
+        </div>
+    </div>
+    <div class=back-top ng-click=backTop()></div>
+</div>
+<script src=http://static.smartisanos.cn/index/asset1429099131842/js/lib.js></script>
+<script src=http://static.smartisanos.cn/index/asset1429099131842/js/template.js></script>
+<script src=http://static.smartisanos.cn/index/asset1429099131842/js/app.js></script>
+<script src=http://static.smartisanos.cn/index/asset1429099131842/js/analytics.js></script>
+</body>
+</html>
